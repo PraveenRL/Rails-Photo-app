@@ -1,24 +1,27 @@
-# README
+# Photo App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Build Authentication System
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. **Add the following in Gemfile**
+> gem 'devise'  
+> gem 'twitter-bootstrap-rails'  
+> gem 'devise-bootstrap-views'
+2. Install gem in cmd:  
+   - `rails g devise:install`  
+   - `rails g devise User`
+3. Open devise_create_users and uncomment under _##Confirmable_
+4. Open user.rb model file and add ***:confirmable,*** after _:registerable_
+5. `rails db:migrate`
+6. Add the following in application_controller.rb
+```
+protect_from_forgery with: :exception  
+before_action :authenticate_user!
+```
+7. Add the following after class definition
+> skip_before_action :authenticate_user!, only: [:index]  
+_Normally the root route will direct to login page, but after putting this line it will stay in localhost:3000_
+8. run in cmd
+- `rails g bootstrap:install static` 
+- `rails g bootstrap:layout application`
+- `rails g devise:views:locale en`
+- `rails g devise:views:bootstrap_templates`
