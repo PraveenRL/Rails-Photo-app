@@ -29,4 +29,8 @@ _Normally the root route will direct to login page, but after putting this line 
 10. Add `gem 'jquery-rails'` in Gemfile and bundle install
 11. Add `//= link application.js` in app\assets\config\manifest.js
 12. Add `config.action_mailer.defaut_url_options = { :host => 'http://localhost:3000' }` in config\environments\development.rb
-13. 
+13. For Image Upload
+> gem 'carrierwave'
+> gem 'mini_magick'
+> gem 'fog'
+14. `rails g scaffold Image name:string picture:string user:references` and rails db:migrate

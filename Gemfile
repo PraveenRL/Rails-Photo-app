@@ -28,6 +28,11 @@ gem 'devise-bootstrap-views'
 
 gem 'jquery-rails'
 
+#For Image Upload
+# gem 'carrierwave'
+# gem 'mini_magick'
+# gem 'fog'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
