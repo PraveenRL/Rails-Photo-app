@@ -9,7 +9,7 @@
 2. Install gem in cmd:  
    - `rails g devise:install`  
    - `rails g devise User`
-3. Open devise_create_users and uncomment under _##Confirmable_
+3. Open devise_create_users migration file and uncomment under _##Confirmable_
 4. Open user.rb model file and add ***:confirmable,*** after _:registerable_
 5. `rails db:migrate`
 6. Add the following in application_controller.rb
@@ -25,3 +25,6 @@ _Normally the root route will direct to login page, but after putting this line 
 - `rails g bootstrap:layout application`
 - `rails g devise:views:locale en`
 - `rails g devise:views:bootstrap_templates`
+9. Remove five fevicon tags in application.html.erb
+10. Add `gem 'jquery-rails'` in Gemfile and bundle install
+11. Add `//= link application.js` in app\assets\config\manifest.js
